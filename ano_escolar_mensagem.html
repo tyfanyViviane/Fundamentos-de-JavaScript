@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Escolar</title>
+</head>
+<body>
+    <form>
+        <label for="anoEscolar">Selecione seu ano escolar:</label>
+        <select id="anoEscolar">
+            <option value="1">1º Ano</option>
+            <option value="2">2º Ano</option>
+            <option value="3">3º Ano</option>
+            <option value="4">4º Ano</option>
+        </select>
+        <button type="button" onclick="verificarAno()">Verificar</button>
+    </form>
+    <p id="mensagem"></p>
+
+    <script>
+        function verificarAno() {
+            let ano = document.getElementById("anoEscolar").value;
+            let mensagem = "";
+
+            if (ano == "1") {
+                mensagem = "Você é novato!";
+            } else if (ano == "2" || ano == "3") {
+                mensagem = "Você está no caminho!";
+            } else if (ano == "4") {
+                mensagem = "Você é concluinte!";
+            }
+
+            document.getElementById("mensagem").innerText = mensagem;
+        }
+    </script>
+</body>
+</html>
